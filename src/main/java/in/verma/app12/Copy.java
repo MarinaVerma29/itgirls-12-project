@@ -4,8 +4,8 @@ import java.io.*;
 public class Copy {
     public static void main(String[] args) {
 
-        File a = new File("myfile.txt");
-        File b = new File("copyto.txt");
+        File a = new File("/Users/marinaverma/IdeaProjects/itgirls-12-project/src/main/java/in/verma/app12/myfile.txt");
+        File b = new File("/Users/marinaverma/IdeaProjects/itgirls-12-project/src/main/java/in/verma/app12/copyto.txt");
 
         try (
                 FileReader fileReader = new FileReader(a);
