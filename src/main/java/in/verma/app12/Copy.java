@@ -2,10 +2,13 @@ package in.verma.app12;
 import java.io.*;
 
 public class Copy {
+
+    static String path1 = "/Users/marinaverma/IdeaProjects/itgirls-12-project/src/main/java/in/verma/app12/myfile.txt";
+    static String path2 = "/Users/marinaverma/IdeaProjects/itgirls-12-project/src/main/java/in/verma/app12/copyto.txt";
     public static void main(String[] args) {
 
-        File a = new File("/Users/marinaverma/IdeaProjects/itgirls-12-project/src/main/java/in/verma/app12/myfile.txt");
-        File b = new File("/Users/marinaverma/IdeaProjects/itgirls-12-project/src/main/java/in/verma/app12/copyto.txt");
+        File a = new File(path1);
+        File b = new File(path2);
 
         try (
                 FileReader fileReader = new FileReader(a);
@@ -15,11 +18,11 @@ public class Copy {
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         ) {
             String line;
-
-
-            while ((line = bufferedReader.readLine()) != null) {
+            line = bufferedReader.readLine();
+            while ((line != null)) {
                 bufferedWriter.write(line);
                 bufferedWriter.newLine();
+                line = bufferedReader.readLine();
             }
 
             System.out.println("Cкопировано!");
